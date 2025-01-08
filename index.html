@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-P1-M19.5</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6;}
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #4CAF50; color: white; text-align: center; padding: 10px; }
+        .dropdown { margin-bottom: 20px; }
+        .dropdown select {font-size: 1em; padding: 5px;}
+        .activity { margin-bottom: 20px; }
+         .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .content { display: none; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; }
+         table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+         span[style*="color: red;"] {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function updateActivities() {
+            const selectedTime = document.getElementById('class-time').value;
+            const activity2 = document.getElementById('activity-2');
+            const activity4Step6 = document.getElementById('activity-4-step-6');
+            const activity4Step7 = document.getElementById('activity-4-step-7');
+
+
+            if (selectedTime === '45') {
+                activity2.style.display = 'none';
+                if (activity4Step6) activity4Step6.style.display = 'block';
+                if (activity4Step7) activity4Step7.style.display = 'block';
+            } else if (selectedTime === '40') {
+                activity2.style.display = 'none';
+                if (activity4Step6) activity4Step6.style.display = 'none';
+                if (activity4Step7) activity4Step7.style.display = 'none';
+
+            } else {
+                activity2.style.display = 'block';
+                 if (activity4Step6) activity4Step6.style.display = 'block';
+                if (activity4Step7) activity4Step7.style.display = 'block';
+
+            }
+             document.getElementById('selected-time').innerText = `Tiempo efectivo de clase: ${selectedTime} minutos`;
+        }
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.style.display = content.style.display === "none" ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook-P1-M19.5</h1>
+    </div>
+    <div class="container">
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateActivities()">
+                <option value="50">50 minutos</option>
+                <option value="45">45 minutos</option>
+                <option value="40">40 minutos</option>
+            </select>
+        </div>
+         <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+          <!-- Actividad 0 -->
+        <div id="activity-0" class="activity" data-time="N/A">
+            <div class="banner" onclick="toggleContent('activity_0_content')">
+                <div class="title">🔍 Actividad 0: Revisión de Misión</div>
+                  <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                   <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Verificación inicial del equipo y materiales necesarios para completar la misión.
+                </div>
+            </div>
+            <div id="activity_0_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;">
+                            <strong>Paso 1:</strong> Proyectar la diapositiva 1 "Revisión de Misión". Verificar que:
+                            <ul>
+                                <li>Los dispositivos están encendidos y tienen acceso a Scratch Jr.</li>
+                                <li>Las Magic Tablets estén disponibles.</li>
+                                <li>Un set de Legos esté en el lugar de cada estudiante.</li>
+                                <li>El espacio de trabajo esté organizado.</li>
+                            </ul>
+                        </td>
+                        <td style="padding: 10px; vertical-align: top;">N/A</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 1 -->
+        <div id="activity-1" class="activity" data-time="2.5">
+            <div class="banner" onclick="toggleContent('activity_1_content')">
+                <div class="title">🎉 Actividad 1: Saludo y Ritual Gnius Club ⏰ Tiempo: 2.5 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Bienvenida al grupo, agradecimiento y presentación de los objetivos del día.
+                </div>
+            </div>
+            <div id="activity_1_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                         <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                         <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                     </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Proyectar la diapositiva 2 "¡Bienvenidos, Exploradores de la Selva!". Saludar a los estudiantes con entusiasmo y energía.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Hola, Genios! 🌿 ¡Bienvenidos a una nueva misión, esta vez exploraremos la selva tropical! Hoy vamos a descubrir animales asombrosos, recolectar frutas exóticas y programar nuestras propias aventuras en la selva. ¿Están listos para explorar? ¡Vamos a internarnos juntos en la selva digital!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                       <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar la diapositiva 3 "¿Cómo se sienten hoy, exploradores?". Mostrar opciones visuales de poses temáticas (Liana Colgante y Explorador Atento). Pedir que representen cómo se sienten usando estas poses.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores! Muéstrenme cómo se sienten hoy: - Si están emocionados y listos para la aventura como un mono balanceándose en una liana, hagan la Pose de Liana Colgante (eleven los brazos y muevan las manos suavemente, simulando una liana 🐒). - Si están curiosos y atentos como un explorador observando la selva, hagan la Pose de Explorador Atento (pongan una mano en la frente, como si estuvieran buscando algo interesante 👀). ¡Muéstrenme sus poses!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (0,5 minutos):</strong> Proyectar la diapositiva 4 "Ritual de Agradecimiento en la Selva". Guiar a los estudiantes para realizar el ritual en conjunto.</td>
+                         <td style="padding: 10px; vertical-align: top;">"Ahora todos juntos, juntemos nuestras manos y digamos: '¡Gracias por estar aquí, Genios! Hoy vamos a explorar la selva, programar aventuras y divertirnos mucho. ¡A descubrir los secretos de la selva!'"</td>
+                     </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (0,5 minutos):</strong> Proyectar la diapositiva 5 "Objetivos de la Misión en la Selva". Enumerar los objetivos de la misión en un formato claro y motivador.</td>
+                        <td style="padding: 10px; vertical-align: top;">"Hoy tenemos una misión en la selva, Genios: <br> <strong>1.</strong> Usar bloques de movimiento y acción para explorar la selva. <br> <strong>2.</strong> Diseñar escenas donde el explorador encuentre animales y recolecte frutas. <br> <strong>3.</strong> Compartir nuestras aventuras y aprender juntos. ¡Será una misión selvática inolvidable!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 2 -->
+        <div id="activity-2" class="activity" data-time="4">
+            <div class="banner" onclick="toggleContent('activity_2_content')">
+                <div class="title">🧠 Actividad 2: Brain Vitamin ⏰ Tiempo: 4 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Construcción de elementos de la selva con bloques de Lego para activar la creatividad.
+                </div>
+            </div>
+            <div id="activity_2_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                   <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Proyectar la diapositiva 6 "¡A construir la Selva!". Introducir la idea de construir elementos de la selva con los bloques de Lego para activar la creatividad.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores de la selva, es momento de activar nuestra creatividad! 🌿 Vamos a construir elementos de la selva con nuestros bloques de Lego. Imaginen árboles gigantes, ríos sinuosos y animales exóticos. ¿Están listos para dar vida a la selva con sus manos?"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1,5 minutos):</strong> Guiar a los estudiantes para que utilicen sus seis bloques de Lego y construyan un elemento que represente su imaginación: - Diseñar las estructuras de árboles, ríos o animales de la selva. - Pensar en cómo se vería su creación en la selva.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Ahora es su turno, Genios! Usen sus seis bloques para construir un elemento único de la selva. - ¿Qué van a crear? ¿Un árbol alto con lianas o un río con peces saltarines? - ¿Qué parte de la selva crearán primero? ¡Manos a la obra!"</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (2 minutos):</strong> Proyectar la diapositiva 8 "La Selva en Movimiento". Pedir a los estudiantes que imiten los movimientos y sonidos de sus elementos de la selva mientras caminan con sus construcciones e inicien una pequeña descripción.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Démosle vida a nuestra selva! 🐒 Cada uno caminará por el aula con su creación mientras imita su movimiento y sonido: - Si su elemento es una planta, mézcanse suavemente. - Si es un animal, imiten sus movimientos. - ¡Compartan una descripción breve de su creación! ¿Qué es? ¿Qué sonido hace? ¡Muestren la magia de su selva!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 3 -->
+        <div id="activity-3" class="activity" data-time="22.5">
+           <div class="banner" onclick="toggleContent('activity_3_content')">
+                <div class="title">🚀 Actividad 3: Challenge ⏰ Tiempo: 22.5 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Programación de expediciones en la selva con movimientos y animaciones en Scratch Jr.
+                </div>
+            </div>
+            <div id="activity_3_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Proyectar la diapositiva 9 "¡Hora del Desafío en la Selva!". Explicar a los estudiantes que trabajarán en retos relacionados con movimientos y animaciones en Scratch Jr.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores de la selva, llegó el momento más emocionante! 🚀 Hoy vamos a programar nuestras propias expediciones en Scratch Jr. Tendremos tres niveles de desafío: <strong>Rookie</strong>, <strong>Master</strong> y <strong>Hacker</strong>, cada uno con una misión única en la selva. ¡Elijan su aventura y prepárense para explorar como nunca antes!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (2 minutos):</strong> Proyectar la diapositiva 10 "Niveles del Desafío en la Selva". Explicar claramente los objetivos, instrucciones, <span style="color: red; font-weight: bold;">condiciones</span>, y un <span style="color: red; font-weight: bold;">consejo</span> útil para cada nivel.</td>
+                        <td style="padding: 10px; vertical-align: top;">"""¡Atención, exploradores, aquí están los desafíos que les esperan en la selva: <br><br> <strong>Nivel Rookie: 'Encuentra a los Monos'</strong> <br><br> - <span style="color: red; font-weight: bold;">Objetivo:</span> Programar al explorador para moverse por la selva y encontrar dos grupos de monos.  <br><br> - <span style="color: red; font-weight: bold;">Instrucciones:</span> Diseña un fondo de selva tropical o selecciona uno prediseñado. Coloca dos grupos de monos como personajes. Añade un explorador o un jeep. Programa al explorador para moverse hacia cada grupo de monos, deteniéndose brevemente al llegar. <br><br> - <span style="color: red; font-weight: bold;">Condiciones:</span> Usa solo bloques de movimiento básicos. El explorador debe visitar los dos grupos de monos en orden. <br><br> - <span style="color: red; font-weight: bold;">Consejo:</span> Divide los movimientos en segmentos cortos y prueba cada uno antes de combinarlos. <br><br> <strong>Nivel Master: 'Recolección de Frutas Exóticas'</strong> <br><br> - <span style="color: red; font-weight: bold;">Objetivo:</span> Programar al explorador para recolectar tres frutas exóticas escondidas en diferentes partes de la selva.   <br><br> - <span style="color: red; font-weight: bold;">Instrucciones:</span> Dibuja o selecciona un fondo con tres frutas (plátanos, cocos, mangos) dispersas. Añade un explorador o un vehículo. Programa los movimientos del explorador para recolectar las frutas una por una. Al alcanzar una fruta, usa un sonido o mensaje. <br><br> - <span style="color: red; font-weight: bold;">Condiciones:</span> El explorador debe visitar cada fruta en orden. Debe detenerse en cada fruta antes de continuar. <br><br> - <span style="color: red; font-weight: bold;">Consejo:</span> Usa bloques de ‘esperar’ o acciones entre los movimientos para mostrar la interacción. <br><br> <strong>Nivel Hacker: 'Cruza el Río Peligroso'</strong> <br><br> - <span style="color: red; font-weight: bold;">Objetivo:</span> Diseñar un recorrido donde el explorador cruce un río peligroso lleno de obstáculos para llegar a un campamento seguro.  <br><br> - <span style="color: red; font-weight: bold;">Instrucciones:</span> Crea un fondo con un río y obstáculos (troncos flotantes, rocas). Programa al explorador para navegar por el río esquivando obstáculos hasta el campamento. Al llegar al campamento, programa una animación de celebración.   <br><br> - <span style="color: red; font-weight: bold;">Condiciones:</span> Si el explorador toca un obstáculo, debe reiniciar el movimiento. El explorador debe seguir un camino claro.   <br><br> - <span style="color: red; font-weight: bold;">Consejo:</span> Planifica primero movimientos simples para esquivar obstáculos y luego conecta las secuencias completas."""</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (20 minutos):</strong> Proyectar la diapositiva 11 "¡A Explorar la Selva!". Supervisar a los estudiantes mientras trabajan, ayudándolos a cumplir las <span style="color: red; font-weight: bold;">condiciones</span> y resolver dudas.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Es hora de programar, exploradores! Elijan su nivel: - Rookie: ¡Encuentren a los monos! - Master: ¡Recolecten frutas exóticas! - Hacker: ¡Crucen el río peligroso! ¡Muestren su creatividad y habilidades en esta expedición en la selva!"</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (2 minutos):</strong> Proyectar la diapositiva 12 "Compartiendo Descubrimientos". Facilitar que los estudiantes muestren sus proyectos y expliquen cómo lograron cumplir con las <span style="color: red; font-weight: bold;">condiciones</span> de cada nivel.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores, qué hallazgos tan increíbles! 🌿 Ahora, compartan sus expediciones: - Rookie: ¿Qué grupos de monos encontraron y cómo los alcanzaron? - Master: ¿Qué frutas exóticas recolectaron y qué acción especial usaron? - Hacker: ¿Cómo lograron cruzar el río y llegar al campamento? ¡Inspírense unos a otros con sus descubrimientos!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 4 -->
+        <div id="activity-4" class="activity" data-time="7.5">
+            <div class="banner" onclick="toggleContent('activity_4_content')">
+                <div class="title">🤝 Actividad 4: Team Gnius ⏰ Tiempo: 7.5 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                    Colaboración en la selva para mejorar los proyectos y compartir conocimientos.
+                </div>
+            </div>
+            <div id="activity_4_content" class="content">
+                 <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Proyectar la diapositiva 13 "Formación de Equipos en la Selva". Pedir a los estudiantes que formen equipos con compañeros cercanos para realizar la actividad de colaboración.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Exploradores, es momento de unir nuestras fuerzas en la selva! 🌿 Formen grupos de 2 o 3 con sus compañeros más cercanos. Estos serán sus equipos para compartir ideas, mejorar sus proyectos y ayudarse mutuamente en esta gran expedición. ¡Vamos a mostrar el poder de la colaboración!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minuto):</strong> Proyectar la diapositiva 14 "Organización de Roles en la Selva". Pedir a los equipos que distribuyan roles: - Líder de la Expedición. - Observador de la Naturaleza. - Artista Creativo.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Cada equipo necesita un plan de expedición! 🌟 Decidan juntos quién será: - Líder de la Expedición: Coordina y guía al equipo. - Observador de la Naturaleza: Revisa los detalles de cada proyecto. - Artista Creativo: Propone ideas geniales para mejorar las historias. ¡Organícense en un minuto, exploradores!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (1 minuto):</strong> Proyectar la diapositiva 15 "Recoge tus Herramientas de Exploración". Pedir a los estudiantes que recojan Magic Tablets u otros materiales necesarios para trabajar.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores, es momento de recoger sus herramientas mágicas! 🌟 Cada equipo necesitará sus Magic Tablets u otros materiales para registrar sus ideas y trabajar juntos. ¡Tienen 30 segundos para prepararse!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 4 (2 minutos):</strong> Proyectar la diapositiva 16 "Revisión en la Selva". Pedir a los estudiantes que observen los proyectos de sus compañeros y respondan a preguntas clave para proporcionar retroalimentación.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores, a observar con atención! 🔎 Revisen los proyectos de sus compañeros y respondan estas preguntas: - ¿Qué les gustó más de la historia? - ¿Qué podrían mejorar para hacerla aún más emocionante? - ¿Qué aprendieron de este proyecto? ¡Sean curiosos y constructivos en sus comentarios!"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 5 (3 minutos):</strong> Proyectar la diapositiva 17 "Turno de Maestro en la Selva". Pedir a los estudiantes que se turnen para explicar sus proyectos y recibir preguntas del equipo.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores, es su turno de ser maestros! 🌿 Por turnos, expliquen cómo diseñaron sus proyectos: - ¿Qué movimientos y sonidos usaron? - ¿Qué desafíos encontraron? - ¿Qué hace único su trabajo? El resto del equipo hará preguntas para aprender más. ¡Luego cambien de rol!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;" id="activity-4-step-6">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 6 (3 minutos):</strong> Proyectar la diapositiva 18 "Ajustes en Equipo en la Selva". Dar tiempo a los equipos para trabajar juntos en los ajustes sugeridos durante la revisión.</td>
+                       <td style="padding: 10px; vertical-align: top;">"¡Exploradores, es tiempo de perfeccionar sus proyectos! 🚀 Tomen las ideas que compartieron y ajusten sus animaciones. Recuerden, los detalles hacen la diferencia. ¡Trabajen juntos para que sus historias sean aún más geniales y emocionantes!"</td>
+                    </tr>
+                     <tr style="border-bottom: 1px solid #ddd;" id="activity-4-step-7">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 7 (2 minutos):</strong> Proyectar la diapositiva 19 "Reflexión en Equipo en la Selva". Facilitar preguntas como: - ¿Qué aprendieron de trabajar juntos? - ¿Cómo mejoraron sus proyectos gracias a las ideas de sus compañeros? - ¿Qué fue lo más divertido de esta expedición?</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores, reflexionemos sobre esta expedición en la selva! 🌿 - ¿Qué aprendieron trabajando juntos en equipo? - ¿Qué mejoraron sus proyectos gracias a las ideas de sus compañeros? - ¿Qué fue lo más divertido de esta misión en la selva? ¡El trabajo en equipo siempre nos lleva a lo más alto!"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- Actividad 5 -->
+        <div id="activity-5" class="activity" data-time="4.5">
+             <div class="banner" onclick="toggleContent('activity_5_content')">
+                <div class="title">🏅 Actividad 5: Honor de Lab ⏰ Tiempo: 4.5 minutos</div>
+                 <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 5px 0;">
+                <div class="subtitle" style="margin-top: 5px; font-size: 0.9em; color: #e0e0e0;">
+                   Reflexión final y organización del espacio de trabajo para cerrar la misión.
+                </div>
+            </div>
+            <div id="activity_5_content" class="content">
+                <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd;">
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #f9f9f9;">
+                        <th style="width: 50%; padding: 10px; text-align: left; border-right: 1px solid #ddd;">Acción</th>
+                        <th style="width: 50%; padding: 10px; text-align: left;">Diálogo Sugerido</th>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                       <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 1 (0,5 minutos):</strong> Proyectar la diapositiva 20 "Revisión de Objetivos en la Selva". Guiar a los estudiantes en una breve reflexión grupal sobre lo aprendido y logrado durante la clase.</td>
+                        <td style="padding: 10px; vertical-align: top;">"¡Exploradores de la selva, qué expedición tan increíble completaron hoy! 🌿 Reflexionemos juntos: - ¿Logramos nuestros objetivos? ¡Sí! Usamos bloques de movimiento y acción, exploramos la selva, encontramos animales y recolectamos frutas, y trabajamos en equipo. ¡Todo gracias a su esfuerzo y creatividad! 🐒"</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #ddd;">
+                        <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 2 (1 minutos):</strong> Realizar el reconocimiento de logros mediante un mensaje verbal motivador.</td>
+                         <td style="padding: 10px; vertical-align: top;">"¡Felicidades, Exploradores! 🌟 Hoy se adentraron en la selva y crearon historias increíbles. Cada animal que encontraron, cada fruta que recolectaron y cada reto que superaron es una prueba de su creatividad y habilidad. Recuerden: ¡ustedes tienen el poder de construir aventuras únicas en cada rincón del mundo! ¡Nos vemos en nuestra próxima misión!"</td>
+                    </tr>
+                    <tr>
+                         <td style="padding: 10px; border-right: 1px solid #ddd; vertical-align: top;"><strong>Paso 3 (3 minutos):</strong> Proyectar la diapositiva 21 "Organización del Espacio de Exploración". Pedir a los estudiantes que devuelvan los materiales (Magic Tablets, bloques de Lego, etc.) a su lugar correspondiente y que organicen el espacio de trabajo.</td>
+                        <td style="padding: 10px; vertical-align: top;">"Exploradores, antes de dejar la selva, debemos dejar nuestro laboratorio listo para la próxima expedición. 🌿 Por favor, devuelvan las Magic Tablets, bloques y todos los materiales que utilizaron. ¡Recuerden que un espacio limpio nos inspira para seguir aprendiendo y creando! 🚀"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+   </div> <!-- Cierre del container -->
+    <script>
+        // Aquí puedes agregar más scripts si es necesario
+    </script>
+</body>
+</html>
